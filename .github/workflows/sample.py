@@ -1,35 +1,26 @@
-def add(x, y):
-    return x + y
+def calculator(operation, num1, num2):
+    if operation == 'add':
+        return num1 + num2
+    elif operation == 'subtract':
+        return num1 - num2
+    elif operation == 'multiply':
+        return num1 * num2
+    elif operation == 'divide':
+        if num2 == 0:
+            return "Error: Division by zero!"
+        return num1 / num2
+    else:
+        return "Invalid operation"
 
-def subtract(x, y):
-    return x - y
+# Example usage
+result_add = calculator('add', 5, 3)
+print("5 + 3 =", result_add)
 
-def multiply(x, y):
-    return x * y
+result_subtract = calculator('subtract', 10, 4)
+print("10 - 4 =", result_subtract)
 
-def divide(x, y):
-    if y == 0:
-        return "Error: Division by zero!"
-    return x / y
+result_multiply = calculator('multiply', 6, 2)
+print("6 * 2 =", result_multiply)
 
-print("Select operation:")
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
-print("4. Divide")
-
-choice = input("Enter choice (1/2/3/4): ")
-
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
-
-if choice == '1':
-    print(num1, "+", num2, "=", add(num1, num2))
-elif choice == '2':
-    print(num1, "-", num2, "=", subtract(num1, num2))
-elif choice == '3':
-    print(num1, "*", num2, "=", multiply(num1, num2))
-elif choice == '4':
-    print(num1, "/", num2, "=", divide(num1, num2))
-else:
-    print("Invalid input")
+result_divide = calculator('divide', 12, 3)
+print("12 / 3 =", result_divide)
